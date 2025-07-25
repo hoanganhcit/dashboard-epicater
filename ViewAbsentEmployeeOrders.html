@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Dashboard - Epicater</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <!-- Canonical SEO -->
+    <link rel="canonical" href="">
+
+    <!-- Favicon -->
+    <link rel="stylesheet" href="assets/css/tabler-icons.css" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="assets/css/core.css" />
+    <link rel="stylesheet" href="assets/css/theme-default.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-select.css" />
+     <link rel="stylesheet" href="assets/css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- PAGE CSS -->
+
+
+    <!-- Helpers -->
+    <script src="assets/js/helpers.js"></script>
+    <script src="assets/js/config.js"></script>
+
+    <style>
+        .is-invalid {
+            border-color: #dc3545;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="layout-wrapper layout-content-navbar  ">
+        <div class="layout-container">
+            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+                <div class="app-brand demo ">
+                    <a href="dashboard.html" class="app-brand-link">
+                        <span class="app-brand-logo demo">
+                            <img src="assets/images/logo.png" alt="" style="height: 30px;">
+                        </span>
+                        <span class="app-brand-logo-collapse">
+                            <img src="assets/images/favicon.png" alt="" style="height: 23px;">
+                        </span>
+                    </a>
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+                        <i class="fal fa-scrubber menu-toggle-icon d-none d-xl-block align-middle"></i>
+                        <i class="fal fal-times d-block d-xl-none align-middle"></i>
+                    </a>
+                </div>
+                <div class="menu-inner-shadow"></div>
+                <ul class="menu-inner py-1">
+                    <li class="menu-header small text-uppercase">
+                        <span class="menu-header-text">Menu Sidebar</span>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="Dashboard.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                            <div>Dashboard</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="Catalogue.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-layout-grid"></i>
+                            <div>Catalogue</div>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="Employees.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-users"></i>
+                            <div>Employees</div>
+                        </a>
+                    </li>
+                    <li class="menu-item active">
+                        <a href="Finance.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-file-dollar"></i>
+                            <div>Finance</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="AccountSettings.html" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-settings"></i>
+                            <div>Account Settings</div>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <div class="layout-page">
+                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                    id="layout-navbar">
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0   d-xl-none ">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                            <i class="ti ti-menu-2 ti-sm"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                        <!-- Search -->
+                        <div class="navbar-nav align-items-center">
+                            <div class="nav-item navbar-search-wrapper mb-0">
+                                <div class="py-3">
+                                    <span class="text-muted fw-light">Dashboard /</span> Finance Detail
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Search -->
+                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+                            <!-- Notifications -->
+                            <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                    data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                    <i class="ti ti-bell ti-md"></i>
+                                    <span class="badge bg-danger rounded-pill badge-notifications">5</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end py-0">
+                                    <li class="dropdown-menu-header border-bottom">
+                                        <div class="dropdown-header d-flex align-items-center py-3">
+                                            <h5 class="text-body mb-0 me-auto">Notification</h5>
+                                            <a href="javascript:void(0)" class="dropdown-notifications-all text-body"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                aria-label="Mark all as read"
+                                                data-bs-original-title="Mark all as read"><i
+                                                    class="ti ti-mail-opened fs-4"></i></a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-notifications-list scrollable-container ps">
+                                        <ul class="list-group list-group-flush">
+                                            <li
+                                                class="list-group-item list-group-item-action dropdown-notifications-item">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <img src="../../assets/img/avatars/1.png" alt=""
+                                                                class="h-auto rounded-circle">
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1">Congratulation Lettie 🎉</h6>
+                                                        <p class="mb-0">Won the monthly best seller gold badge</p>
+                                                        <small class="text-muted">1h ago</small>
+                                                    </div>
+                                                    <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                        <a href="javascript:void(0)"
+                                                            class="dropdown-notifications-read"><span
+                                                                class="badge badge-dot"></span></a>
+                                                        <a href="javascript:void(0)"
+                                                            class="dropdown-notifications-archive"><span
+                                                                class="ti ti-x"></span></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li
+                                                class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <img src="assets/images/avatars/2.png" alt=""
+                                                                class="h-auto rounded-circle">
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1">New Message ✉️</h6>
+                                                        <p class="mb-0">You have new message from Natalie</p>
+                                                        <small class="text-muted">1h ago</small>
+                                                    </div>
+                                                    <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                        <a href="javascript:void(0)"
+                                                            class="dropdown-notifications-read"><span
+                                                                class="badge badge-dot"></span></a>
+                                                        <a href="javascript:void(0)"
+                                                            class="dropdown-notifications-archive"><span
+                                                                class="ti ti-x"></span></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li
+                                                class="list-group-item list-group-item-action dropdown-notifications-item">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <span
+                                                                class="avatar-initial rounded-circle bg-label-success"><i
+                                                                    class="ti ti-shopping-cart"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1">Whoo! You have new order 🛒 </h6>
+                                                        <p class="mb-0">ACME Inc. made new order $1,154</p>
+                                                        <small class="text-muted">1 day ago</small>
+                                                    </div>
+                                                    <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                        <a href="javascript:void(0)"
+                                                            class="dropdown-notifications-read"><span
+                                                                class="badge badge-dot"></span></a>
+                                                        <a href="javascript:void(0)"
+                                                            class="dropdown-notifications-archive"><span
+                                                                class="ti ti-x"></span></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li
+                                                class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <img src="assets/images/avatars/1.png" alt=""
+                                                                class="h-auto rounded-circle">
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1">Send connection request</h6>
+                                                        <p class="mb-0">Peter sent you connection request</p>
+                                                        <small class="text-muted">4 days ago</small>
+                                                    </div>
+                                                    <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                        <a href="javascript:void(0)"
+                                                            class="dropdown-notifications-read"><span
+                                                                class="badge badge-dot"></span></a>
+                                                        <a href="javascript:void(0)"
+                                                            class="dropdown-notifications-archive"><span
+                                                                class="ti ti-x"></span></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li
+                                                class="list-group-item list-group-item-action dropdown-notifications-item">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <img src="assets/images/avatars/4.png" alt=""
+                                                                class="h-auto rounded-circle">
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1">New message from Jane</h6>
+                                                        <p class="mb-0">Your have new message from Jane</p>
+                                                        <small class="text-muted">5 days ago</small>
+                                                    </div>
+                                                    <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                        <a href="javascript:void(0)"
+                                                            class="dropdown-notifications-read"><span
+                                                                class="badge badge-dot"></span></a>
+                                                        <a href="javascript:void(0)"
+                                                            class="dropdown-notifications-archive"><span
+                                                                class="ti ti-x"></span></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-menu-footer border-top">
+                                        <a href="javascript:void(0);"
+                                            class="dropdown-item d-flex justify-content-center text-primary p-2 h-px-40 mb-1 align-items-center">
+                                            View all notifications
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- User -->
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                    data-bs-toggle="dropdown">
+                                    <div class="avatar avatar-online">
+                                        <img src="assets/images/avatars/3.png" alt="" class="h-auto rounded-circle">
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item" href="AccountSettings.html">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar avatar-online">
+                                                        <img src="assets/images/1.png" alt=""
+                                                            class="h-auto rounded-circle">
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <span class="fw-medium d-block">Heather Wood</span>
+                                                    <small class="text-muted">Admin</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="AccountSettings.html">
+                                            <i class="ti ti-user-check me-2 ti-sm"></i>
+                                            <span class="align-middle">Settings</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#" target="_blank">
+                                            <i class="ti ti-logout me-2 ti-sm"></i>
+                                            <span class="align-middle">Log Out</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/ User -->
+                        </ul>
+                    </div>
+                </nav>
+                <div class="content-wrapper">
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <h4 class="py-3 mb-4"><span class="text-muted fw-light">Finance /</span> View Absent Employee Orders</h4>
+                        <div class="card">
+                            <div class="row justify-between align-items-center mb-3">
+                                <div class="col-md-4 col-xs-12">
+                                    <h5 class="card-header"><a href="FinanceDetail.html"><i class="fal fa-long-arrow-left"></i> View Employee Orders</a></h5>
+                                </div>
+                                <div class="col-md-4 col-xs-12">
+                                    <div class="demo-inline-spacing px-4 d-flex flex-end">
+                                        <div class="search-box w-full">
+                                            <form id="form_search_app" action="#" method="get" data-remote="true">
+                                                <input type="text" class="form-control" placeholder="Name or Email"
+                                                    name="search">
+                                                <i class="fal fa-search"></i>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive text-nowrap">
+                                <table class="table" id="table_pagination">
+                                    <thead>
+                                        <tr>
+                                            <th>Full Name</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Dietary restrictions</th>
+                                            <th>Key dietary indicators</th>
+                                            <th>Created at</th>
+                                            <th>Add boxed</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="table-border-bottom-0">
+                                        <tr>
+                                            <td>CHICKEN OPTION</td>
+                                            <td>njkc@yopmail.com</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Nov 28, 2022 4:34 PM</td>
+                                            <td>
+                                                <button type="button" class="add-folder addNewAppBtn btn btn-primary me-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modal_add_guet_box">
+                                                    <i class="fal fa-plus-circle mr-1"></i>
+                                                    <span>Add Boxed</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>CHICKEN OPTION</td>
+                                            <td>njkc@yopmail.com</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Nov 28, 2022 4:34 PM</td>
+                                            <td>
+                                                <button type="button" class="add-folder addNewAppBtn btn btn-primary me-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modal_add_guet_box">
+                                                    <i class="fal fa-plus-circle mr-1"></i>
+                                                    <span>Add Boxed</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>CHICKEN OPTION</td>
+                                            <td>njkc@yopmail.com</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Nov 28, 2022 4:34 PM</td>
+                                            <td>
+                                                <button type="button" class="add-folder addNewAppBtn btn btn-primary me-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modal_add_guet_box">
+                                                    <i class="fal fa-plus-circle mr-1"></i>
+                                                    <span>Add Boxed</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>CHICKEN OPTION</td>
+                                            <td>njkc@yopmail.com</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Nov 28, 2022 4:34 PM</td>
+                                            <td>
+                                                <button type="button" class="add-folder addNewAppBtn btn btn-primary me-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modal_add_guet_box">
+                                                    <i class="fal fa-plus-circle mr-1"></i>
+                                                    <span>Add Boxed</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>CHICKEN OPTION</td>
+                                            <td>njkc@yopmail.com</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Nov 28, 2022 4:34 PM</td>
+                                            <td>
+                                                <button type="button" class="add-folder addNewAppBtn btn btn-primary me-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modal_add_guet_box">
+                                                    <i class="fal fa-plus-circle mr-1"></i>
+                                                    <span>Add Boxed</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>CHICKEN OPTION</td>
+                                            <td>njkc@yopmail.com</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Nov 28, 2022 4:34 PM</td>
+                                            <td>
+                                                <button type="button" class="add-folder addNewAppBtn btn btn-primary me-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modal_add_guet_box">
+                                                    <i class="fal fa-plus-circle mr-1"></i>
+                                                    <span>Add Boxed</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>CHICKEN OPTION</td>
+                                            <td>njkc@yopmail.com</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Nov 28, 2022 4:34 PM</td>
+                                            <td>
+                                                <button type="button" class="add-folder addNewAppBtn btn btn-primary me-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modal_add_guet_box">
+                                                    <i class="fal fa-plus-circle mr-1"></i>
+                                                    <span>Add Boxed</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>CHICKEN OPTION</td>
+                                            <td>njkc@yopmail.com</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Nov 28, 2022 4:34 PM</td>
+                                            <td>
+                                                <button type="button" class="add-folder addNewAppBtn btn btn-primary me-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modal_add_guet_box">
+                                                    <i class="fal fa-plus-circle mr-1"></i>
+                                                    <span>Add Boxed</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>CHICKEN OPTION</td>
+                                            <td>njkc@yopmail.com</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Nov 28, 2022 4:34 PM</td>
+                                            <td>
+                                                <button type="button" class="add-folder addNewAppBtn btn btn-primary me-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modal_add_guet_box">
+                                                    <i class="fal fa-plus-circle mr-1"></i>
+                                                    <span>Add Boxed</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>CHICKEN OPTION</td>
+                                            <td>njkc@yopmail.com</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Nov 28, 2022 4:34 PM</td>
+                                            <td>
+                                                <button type="button" class="add-folder addNewAppBtn btn btn-primary me-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modal_add_guet_box">
+                                                    <i class="fal fa-plus-circle mr-1"></i>
+                                                    <span>Add Boxed</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>CHICKEN OPTION</td>
+                                            <td>njkc@yopmail.com</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Nov 28, 2022 4:34 PM</td>
+                                            <td>
+                                                <button type="button" class="add-folder addNewAppBtn btn btn-primary me-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modal_add_guet_box">
+                                                    <i class="fal fa-plus-circle mr-1"></i>
+                                                    <span>Add Boxed</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <nav aria-label="Page navigation" class="my-4">
+                                    <ul class="pagination justify-content-center" id="pagination"></ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Add và Update -->
+    <div class="modal fade" id="modal_add_guet_box" tabindex="-1" aria-labelledby="modalNewAppLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalNewAppLabel">Add Guest Box</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    
+                <form id="addGuestBox">
+                    
+                    <div class="modal-body row">
+                        <div class="col-md-6 mb-3">
+                            <label for="selectEmployee" class="form-label">Employee *</label>
+                            <select id="selectEmployee" class="selectpicker w-100" data-style="btn-default">
+                                <option value="">Select a menu</option>
+                                <option class="not_ordered" value="1032">CHICKEN OPTION</option>
+                                <option class="not_ordered" value="1033">BEEF OPTION</option>
+                                <option class="not_ordered" value="1034">VEGETARIAN OPTION</option>
+                                <option class="ordered" value="1035">VEGAN OPTION</option>
+                                <option class="not_ordered" value="1152">SEAFOOD OPTION</option>
+                                <option class="not_ordered" value="1191">FISH OPTION</option>
+                                <option class="not_ordered" value="1219">PORK OPTION</option>
+                                <option class="not_ordered" value="1420">VEGAN OPTION 2</option>
+                                <option class="not_ordered" value="1476">VERIFIED GLUTEN/DAIRY FREE</option>
+                                <option class="not_ordered" value="1596">VERIFIED HALAL OPTION</option>
+                                <option class="not_ordered" value="1606">TURKEY  OPTION</option>
+                                <option class="ordered" value="1689">LAMB OPTION</option>
+                                <option class="not_ordered" value="2297">Reserved  Meal </option>
+                                <option class="not_ordered" value="2342">GOAT OPTION</option>
+                                <option class="not_ordered" value="2513">SALAD Option</option>
+                            </select>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="date" class="form-label">Dates *</label>
+                            <input type="text" class="form-control bs-datepicker-basic" placeholder="Search" id="date" />
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="selectMenu" class="form-label">Menu *</label>
+                            <select id="selectMenu" name="selectMenu" class="selectpicker w-100" data-style="btn-default">
+                                <option value="">Select a menu</option>
+                                <option value="2387">Lamb Seekh Kebab Roll</option>
+                                <option value="2910">Vegan Spinach and Tofu Roti</option>
+                            </select>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="quantity" class="form-label">Quantity *</label>
+                            <input type="text" class="form-control" id="quantity" name="quantity">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="specialInstructions" class="form-label">Special instructions</label>
+                            <textarea class="form-control" id="specialInstructions" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="modalButtonModal">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Core JS -->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/popper.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/menu.js"></script>
+
+    <script type="text/javascript" src="assets/js/bootstrap-select.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-datepicker.js"></script>
+
+    <!-- Main JS -->
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('.bs-datepicker-basic').datepicker({
+                format: 'dd-mm-yyyy',
+                autoclose: true,
+                todayHighlight: true
+            });
+
+            // Form Validate 
+            
+            $('#addGuestBox').on('submit', function (e) {
+                e.preventDefault(); 
+                $('.form-control, .selectpicker').removeClass('is-invalid');
+                $('.invalid-feedback').text('');
+
+                let isValid = true;
+
+                let employee = $('#selectEmployee').val();
+                let date = $('#date').val().trim();
+                let menu = $('#selectMenu').val();
+                let quantity = $('#quantity').val().trim();
+
+                if (employee === '') {
+                    $('#selectEmployee').addClass('is-invalid');
+                    $('#selectEmployee').closest('.mb-3').find('.invalid-feedback').text('Employee is required.');
+                    isValid = false;
+                }
+
+                if (date === '') {
+                    $('#date').addClass('is-invalid');
+                    $('#date').closest('.mb-3').find('.invalid-feedback').text('Date is required.');
+                    isValid = false;
+                }
+
+                if (menu === '') {
+                    $('#selectMenu').addClass('is-invalid');
+                    $('#selectMenu').closest('.mb-3').find('.invalid-feedback').text('Menu is required.');
+                    isValid = false;
+                }
+
+                if (quantity === '') {
+                    $('#quantity').addClass('is-invalid');
+                    $('#quantity').closest('.mb-3').find('.invalid-feedback').text('Quantity is required.');
+                    isValid = false;
+                } else if (!/^\d+$/.test(quantity) || parseInt(quantity) <= 0) {
+                    $('#quantity').addClass('is-invalid');
+                    $('#quantity').closest('.mb-3').find('.invalid-feedback').text('Quantity must be a positive number.');
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    $('#modal_add_guet_box').modal('hide');
+                }
+            });
+
+            // Pagination Table
+            const rowsPerPage = 10;
+            const $table = $('#table_pagination');
+            const $rows = $table.find('tbody tr');
+            const totalRows = $rows.length;
+            const totalPages = Math.ceil(totalRows / rowsPerPage);
+            const $pagination = $('#pagination');
+
+            function renderPagination() {
+                if (totalRows <= rowsPerPage) {
+                    $('#pagination').parent('nav').hide();
+                    return;
+                } else {
+                    $('#pagination').parent('nav').show();
+                }
+                $pagination.empty();
+
+                $pagination.append(`
+                <li class="page-item prev disabled">
+                    <a class="page-link" href="javascript:void(0);"><i class="ti ti-chevrons-left ti-xs"></i></a>
+                </li>
+                `);
+
+                for (let i = 1; i <= totalPages; i++) {
+                $pagination.append(`
+                    <li class="page-item ${i === 1 ? 'active' : ''}">
+                        <a class="page-link" href="javascript:void(0);">${i}</a>
+                    </li>
+                `);
+                }
+
+                $pagination.append(`
+                <li class="page-item next ${totalPages <= 1 ? 'disabled' : ''}">
+                    <a class="page-link" href="javascript:void(0);"><i class="ti ti-chevrons-right ti-xs"></i></a>
+                </li>
+                `);
+            }
+
+            function showPage(page) {
+                const start = (page - 1) * rowsPerPage;
+                const end = start + rowsPerPage;
+
+                $rows.hide().slice(start, end).show();
+
+                $pagination.find('.page-item').removeClass('active');
+                $pagination.find('.page-item').eq(page).addClass('active');
+
+                $pagination.find('.prev').toggleClass('disabled', page === 1);
+                $pagination.find('.next').toggleClass('disabled', page === totalPages);
+
+                $pagination.data('current', page);
+            }
+
+            function setupEvents() {
+                $pagination.on('click', '.page-item:not(.prev):not(.next)', function() {
+                const page = parseInt($(this).text());
+                showPage(page);
+                });
+
+                $pagination.on('click', '.prev', function() {
+                let current = $pagination.data('current') || 1;
+                if (current > 1) showPage(current - 1);
+                });
+
+                $pagination.on('click', '.next', function() {
+                let current = $pagination.data('current') || 1;
+                if (current < totalPages) showPage(current + 1);
+                });
+            }
+
+            renderPagination();
+            setupEvents();
+            showPage(1);
+        });
+    </script>
+
+</body>
+
+</html>
