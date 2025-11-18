@@ -668,11 +668,11 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="subsidization" id="subsidyAPaid" value="apaid">
                                         <label class="form-check-label" for="subsidyAPaid">
-                                            A Paid
+                                            Partial (% or fixed $)
                                         </label>
                                     </div>
                                 </div>
-                                <!-- A Paid Details (Hidden by default) -->
+                                <!-- Partial (% or fixed $) -->
                                 <div id="aPaidDetails" style="display: none;">
                                     <div class="row">
                                         <div class="col-6">
@@ -750,6 +750,15 @@
         $(document).ready(function () {
 
             let vendorOptionCount = 0;
+
+            // Initialize with first vendor option when modal is shown
+            $('#modal_new_app').on('shown.bs.modal', function () {
+                if (vendorOptionCount === 0) {
+                    vendorOptionCount = 1;
+                    const vendorOptionHTML = createVendorOption(vendorOptionCount);
+                    $('#vendorOptionsContainer').append(vendorOptionHTML);
+                }
+            });
 
             // Add More Option functionality
             $('#addMoreOptionBtn').on('click', function () {
